@@ -20,7 +20,7 @@ public class IndexManager {
     /**
      * writer默认配置
      */
-    private final IndexWriterConfig iwc = new IndexWriterConfig(Version.LUCENE_4_10_2, new IKAnalyzer(true));
+    private final IndexWriterConfig iwc = new IndexWriterConfig(Version.LUCENE_4_10_2, LuceneConstant.ANALYZER);
 
     private Directory dir;
     private IndexReader reader;
