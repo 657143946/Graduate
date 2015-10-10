@@ -115,7 +115,8 @@ def prepare_json_data():
             "college": foo["education"]["college"],
             "major": foo["education"]["major"],
             "industry": foo["industry"],
-            "work": "@".join(["%s#%s" % (w["position"], w["year"]) for w in foo["work"][::-1]])
+            "work": "@".join(["%s#%s" % (w["position"], w["year"]) for w in foo["work"][::-1]]),
+            "work_count": len(foo["work"])
         }
         out_file.write(json.dumps(out))
         out_file.write("\n")
