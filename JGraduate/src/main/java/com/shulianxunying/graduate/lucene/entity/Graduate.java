@@ -1,7 +1,9 @@
 package com.shulianxunying.graduate.lucene.entity;
 
 import org.apache.lucene.document.Document;
+import org.apache.lucene.document.Field;
 import org.apache.lucene.document.FieldType;
+import org.apache.lucene.document.IntField;
 
 /**
  * Created by chrislee on 15-10-9 下午3:32.
@@ -74,10 +76,12 @@ public class Graduate implements BaseEntity {
     public Document toDoc() {
         // TODO
         Document document = new Document();
-        document.add();
-
-
-
-        return null;
+        document.add(new Field("college", college, fieldType));
+        document.add(new Field("major", major, fieldType));
+        document.add(new Field("first_work", first_work, fieldType));
+        document.add(new Field("industry", industry, fieldType));
+        document.add(new Field("work", work, fieldType));
+        document.add(new IntField("work_count", work_count, Field.Store.YES));
+        return document;
     }
 }
