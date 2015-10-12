@@ -43,9 +43,9 @@
 
 
     <!-- 定义资源访问 -->
-    <!--<mvc:resources location="/css/" mapping="/css/**"/>-->
-    <!--<mvc:resources location="/js/" mapping="/js/**"/>-->
-    <!--<mvc:resources location="/image/" mapping="/image/**"/>-->
+    <mvc:resources location="/css/" mapping="/css/**"/>
+    <mvc:resources location="/js/" mapping="/js/**"/>
+    <mvc:resources location="/image/" mapping="/image/**"/>
 
     <!-- 总错误处理 -->
     <bean id="exceptionResolver" class="com.shulianxunying.graduate.interceptor.GlobalExceptionHandler"/>
