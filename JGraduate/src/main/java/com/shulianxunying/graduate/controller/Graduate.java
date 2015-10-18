@@ -8,7 +8,9 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
+import javax.enterprise.inject.Model;
 import java.io.IOException;
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -25,9 +27,8 @@ public class Graduate {
             @RequestParam(defaultValue = "1984612") String expJob
     ) throws IOException, ParseException {
         ControllerModel model = new ControllerModel();
-        Map<String, Object> data = Searcher.pieChart(college, major, expJob, 1000, 6, 5);
-        model.put("jobs", data.get("jobs"));
-        model.put("route", data.get("route"));
+        Map<String, Integer> jobs = Searcher.pieChart(college, major, expJob, 1000, 6);
+        model.put("jobs", jobs);
         return model;
     }
 
@@ -35,5 +36,23 @@ public class Graduate {
     public ModelAndView pieChartPage() {
         ModelAndView mv = new ModelAndView("/index.html");
         return mv;
+    }
+
+    @ResponseBody
+    @RequestMapping("careerRoute.json")
+    public ControllerModel careerRoute(
+            @RequestParam(defaultValue = "1984612") String college,
+            @RequestParam(defaultValue = "1984612") String major,
+            @RequestParam(required = true) String expJob
+    ) throws IOException, ParseException {
+        ControllerModel model = new ControllerModel();
+        List<List<String>> routes = Searcher.careerRoute(college, major, expJob, 2, 5, 100);
+        try{
+            routes = routes.subList(0, 10);
+        } catch (Exception e){
+
+        }
+        model.put("routes", routes);
+        return model;
     }
 }

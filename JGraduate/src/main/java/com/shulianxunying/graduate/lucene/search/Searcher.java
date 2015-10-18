@@ -14,7 +14,7 @@ import java.util.*;
  */
 public class Searcher {
 
-    public static Map<String, Object> pieChart(String college, String major, String expJob, int sample, int top, int routeCount) throws ParseException, IOException {
+    public static Map<String, Integer> pieChart(String college, String major, String expJob, int sample, int top) throws ParseException, IOException {
         IndexSearcher searcher = LuceneConstant.index.getSearcher();
         /**
          * 构造query
@@ -39,7 +39,6 @@ public class Searcher {
          * 统计
          */
         Map<String, Integer> jobs = new HashMap<>();
-        List<String> route = new LinkedList<>();
 
         int bar = 0;
         for (ScoreDoc sd : hits.scoreDocs) {
@@ -54,9 +53,6 @@ public class Searcher {
             } else {
                 jobs.put(foo, 1);
             }
-            if (Integer.parseInt(doc.get("work_count")) > 1 && route.size() < routeCount){
-                route.add(doc.get("work")+"="+bar);
-            }
         }
         /**
          * 排序
@@ -70,9 +66,60 @@ public class Searcher {
         });
         entryList = entryList.subList(0, Math.min(entryList.size(), top));
 
-        Map<String, Object> ret = new HashMap<>();
-        ret.put("jobs", entryList);
-        ret.put("route", route);
+        Map<String, Integer> ret = new HashMap<>();
+        for (Map.Entry<String, Integer> temp: entryList){
+            ret.put(temp.getKey(), temp.getValue());
+        }
+        return ret;
+    }
+
+    public static List<List<String>> careerRoute(
+            String college, String major, String expJob,
+            int minWorkNumber, int maxWorkNumber,
+            int top) throws ParseException, IOException {
+        IndexSearcher searcher = LuceneConstant.index.getSearcher();
+        /**
+         * 构造查询
+         */
+        BooleanQuery query = new BooleanQuery();
+        if (college != null && !"".equals(college.trim())){
+            query.add(new QueryParser("college", LuceneConstant.ANALYZER).parse(college.trim()), BooleanClause.Occur.SHOULD);
+        }
+        if (major != null && !"".equals(major.trim())){
+            query.add(new QueryParser("major", LuceneConstant.ANALYZER).parse(major.trim()), BooleanClause.Occur.SHOULD);
+        }
+        if (expJob != null && !"".equals(expJob.trim())){
+            query.add(new QueryParser("first_work", LuceneConstant.ANALYZER).parse(expJob.trim()), BooleanClause.Occur.MUST);
+        }
+        query.add(NumericRangeQuery.newIntRange("work_count", minWorkNumber, maxWorkNumber, true, true), BooleanClause.Occur.MUST);
+        /**
+         * 搜索
+         */
+        TopDocs hits = searcher.search(query, top);
+        /**
+         * 构造返回
+         */
+        List<List<String>> ret = new LinkedList<>();
+        for (ScoreDoc sd : hits.scoreDocs) {
+            Document doc = searcher.doc(sd.doc);
+            String foo = doc.get("work");
+            String[] works = foo.split("@");
+            List<String> bar = new LinkedList<>();
+            for (String work: works){
+                int end = work.indexOf("#");
+                if (end > 0){
+                    work = work.substring(0, end);
+                } else{
+
+                }
+                if (bar.size() == 0 || !bar.get(bar.size()-1).equals(work)){
+                    bar.add(work);
+                }
+            }
+            if (bar.size() >= minWorkNumber && bar.size() <= maxWorkNumber){
+                ret.add(bar);
+            }
+        }
         return ret;
     }
 
