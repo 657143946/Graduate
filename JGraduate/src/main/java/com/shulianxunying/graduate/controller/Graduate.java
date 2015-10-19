@@ -27,7 +27,7 @@ public class Graduate {
             @RequestParam(defaultValue = "1984612") String expJob
     ) throws IOException, ParseException {
         ControllerModel model = new ControllerModel();
-        Map<String, Integer> jobs = Searcher.pieChart(college, major, expJob, 1000, 6);
+        List<Map.Entry<String, Integer>> jobs = Searcher.pieChart(college, major, expJob, 1000, 6);
         model.put("jobs", jobs);
         return model;
     }

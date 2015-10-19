@@ -14,7 +14,7 @@ import java.util.*;
  */
 public class Searcher {
 
-    public static Map<String, Integer> pieChart(String college, String major, String expJob, int sample, int top) throws ParseException, IOException {
+    public static List<Map.Entry<String, Integer>> pieChart(String college, String major, String expJob, int sample, int top) throws ParseException, IOException {
         IndexSearcher searcher = LuceneConstant.index.getSearcher();
         /**
          * 构造query
@@ -66,11 +66,11 @@ public class Searcher {
         });
         entryList = entryList.subList(0, Math.min(entryList.size(), top));
 
-        Map<String, Integer> ret = new HashMap<>();
-        for (Map.Entry<String, Integer> temp: entryList){
-            ret.put(temp.getKey(), temp.getValue());
-        }
-        return ret;
+//        Map<String, Integer> ret = new HashMap<>();
+//        for (Map.Entry<String, Integer> temp: entryList){
+//            ret.put(temp.getKey(), temp.getValue());
+//        }
+        return entryList;
     }
 
     public static List<List<String>> careerRoute(
@@ -89,7 +89,7 @@ public class Searcher {
             query.add(new QueryParser("major", LuceneConstant.ANALYZER).parse(major.trim()), BooleanClause.Occur.SHOULD);
         }
         if (expJob != null && !"".equals(expJob.trim())){
-            query.add(new QueryParser("first_work", LuceneConstant.ANALYZER).parse(expJob.trim()), BooleanClause.Occur.MUST);
+            query.add(new QueryParser("first_work", LuceneConstant.ANALYZER).parse("\""+expJob.trim()+"\""), BooleanClause.Occur.MUST);
         }
         query.add(NumericRangeQuery.newIntRange("work_count", minWorkNumber, maxWorkNumber, true, true), BooleanClause.Occur.MUST);
         /**
