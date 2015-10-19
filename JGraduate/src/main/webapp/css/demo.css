@@ -260,4 +260,15 @@
     margin-right: 20px;
 }
 
-
+.margin-right::-webkit-input-placeholder{
+    color: #bbb;
+}
+.margin-right::-moz-input-placeholder{
+    color: #bbb;
+}
+.margin-right::-o-input-placeholder{
+    color: #bbb;
+}
+.margin-right::-mz-input-placeholder{
+    color: #bbb;
+}

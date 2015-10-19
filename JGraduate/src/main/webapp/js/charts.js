@@ -25,7 +25,7 @@ var jG_charts = {
 
         });
 
-        this.search({college : '',major : '电子商务', expJob : ''});
+        this.search({college : '电子科技大学',major : '电子商务', expJob : ''});
 
 
     },
