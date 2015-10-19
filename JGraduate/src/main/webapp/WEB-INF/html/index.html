@@ -1,5 +1,136 @@
+<!DOCTYPE html>
 <html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>教育部</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=10;IE=9;IE=8;IE=EDGE">
+    <meta charset="utf-8">
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <link rel="stylesheet" href="/css/reset.css"/>
+    <link rel="stylesheet" href="/css/demo.css"/>
+    <link rel="stylesheet" href="/css/bussiness.css"/>
+    <link rel="stylesheet" href="/js/jqueryalert/jquery.alerts.css"/>
+</head>
 <body>
-<h2>lalallalalala</h2>
+
+    <div class="g-doc">
+        <div class="g-hd">
+            <div class="m-header">
+                <img src="/image/logo.png" class="logo">
+                <div class="clearfix search-input-div J_searchArea">
+                    <input class="input margin-right" validated="require" msg="学校名称" placeholder="例：成都电子科技大学" id="search_college"/>
+                    <input class="input margin-right" validated="require" msg="专业名称" placeholder="例：电子商务专业" id="search_major"/>
+                    <input class="input margin-right" msg="期望职位" placeholder="例：产品经理" id="search_expJob"/>
+                    <button class="u-tt-btn1 J_search">查看职业分布与发展</button>
+                </div>
+            </div>
+        </div>
+        <div class="g-bd">
+            <div class="g-content">
+                <div class="m-first">
+                    <div>
+                        <div class="m-div-frame">
+                            <span class="line"></span>
+                            <span class="u-tt-lg u-tt-color9 first-name"><span class="major"></span>的职业分布</span>
+                            <span class="line"></span>
+                        </div>
+                    </div>
+                    <div class="data-pic data-pic-img">
+                        <!--<img src="/image/person.png" class="float-left">-->
+                        <div class="data-map" id="pieCharts">
+
+                        </div>
+                    </div>
+        <!--            <div class="data-list float-right clearfix">
+                        <h1 class="u-tt-lg u-tt-color1 ">相关职位: 产品经理</h1>
+                        <ul>
+                            <li class="dataList-li clearfix">
+                                <img src="#" class="float-left  company-logo">
+                                <div class="float-left list-right ">
+                                    <p class="u-tt-md u-tt-color9">产品经理 [成都]</p>
+                                    <p class="u-tt-md u-tt-color9 u-tt-more">5K-10K / 本科 / 经验不限</p>
+                                    <button class="u-tt-btn3">申请</button>
+                                </div>
+                            </li>
+                            <li class="dataList-li clearfix">
+                                <img src="#" class="float-left  company-logo">
+                                <div class="float-left list-right ">
+                                    <p class="u-tt-md u-tt-color9">产品经理 [成都]</p>
+                                    <p class="u-tt-md u-tt-color9 u-tt-more">5K-10K / 本科 / 经验不限</p>
+                                    <button class="u-tt-btn3">申请</button>
+                                </div>
+                            </li>
+                            <li class="dataList-li clearfix">
+                                <img src="#" class="float-left  company-logo">
+                                <div class="float-left list-right ">
+                                    <p class="u-tt-md u-tt-color9">产品经理 [成都]</p>
+                                    <p class="u-tt-md u-tt-color9 u-tt-more">5K-10K / 本科 / 经验不限</p>
+                                    <button class="u-tt-btn3">申请</button>
+                                </div>
+                            </li>
+                            <li class="dataList-li clearfix">
+                                <img src="#" class="float-left  company-logo">
+                                <div class="float-left list-right ">
+                                    <p class="u-tt-md u-tt-color9">产品经理 [成都]</p>
+                                    <p class="u-tt-md u-tt-color9 u-tt-more">5K-10K / 本科 / 经验不限</p>
+                                    <button class="u-tt-btn3">申请</button>
+                                </div>
+                            </li>
+
+                         <div class="clearfix">
+                             f分页
+                         </div>
+                        </ul>
+-->
+                    </div>
+                <div class="m-first">
+                    <div>
+                        <div class="m-div-frame">
+                            <span class="line"></span>
+                            <span class="u-tt-lg u-tt-color9 first-name"><span class="expJob"></span>的职业发展路径</span>
+                            <span class="line"></span>
+                        </div>
+                    </div>
+                    <div class="data-pic">
+                      
+                        <div class="data-maps" id="forceCharts">
+
+                        </div>
+                    </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    <div class="g-ft">
+        <div class="m-footer">
+            <div class="m-footer-up">
+                <ul class="u-tt-sm ft-nav-left J-about" >
+                    <li><a _href="aboutUs">关于我们</a></li>
+                    <li><a _href="partner">合作伙伴</a></li>
+                    <li><a  _href="talents">诚征英才</a></li>
+                    <li><a  _href="law">法律声明</a></li>
+                    <li ><a  _href="contact">联系我们</a></li>
+                </ul>
+            </div>
+            <p class="u-tt-sm ft-nav" >Copyright @ 2012-2015
+                成都数联寻英科技有限公司
+                蜀ICP备14018015号-3 </p>
+            <p class="m-ft-border"></p>
+        </div>
+    </div>
+
 </body>
+<script type="text/javascript" src="/js/jquery-1.8.3.min.js"></script>
+<script type="text/javascript" src="/js/validator.js"></script>
+<script type="text/javascript" src="/js/beanUtil.js"></script>
+<script type="text/javascript" src="/js/dc_validate.js"></script>
+<script type="text/javascript" src="/js/echarts.js"></script>
+<script type="text/javascript" src="/js/jqueryalert/jquery.alerts.js"></script>
+<script type="text/javascript" src="/js/charts.js"></script>
+<script type="text/javascript">
+    $(function(){
+        jG_charts.ready();
+    });
+</script>
 </html>
