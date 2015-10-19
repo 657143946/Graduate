@@ -1,0 +1,122 @@
+#popup_overlay {
+	position: fixed;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	z-index: 9998;
+	background: url(images/loading.png) repeat;
+}
+
+#popup_overlay > div {
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	z-index: 1;
+	
+}
+
+#popup_overlay > iframe {
+	z-index: 0;
+	filter: alpha(opacity=0);
+}
+
+#popup_container {
+	width: 490px;
+	background-color: #fff;
+	border-radius: 5px;
+}
+
+#popup_title {
+	margin: 0;
+	padding: 0;
+	height: 34px;
+	line-height: 34px;
+	color: #fff;
+	font-size: 14px;
+	text-indent: 8px;
+	border-radius:5px 5px 0 0;
+	background-color: #0868e0;
+	cursor: default;
+}
+
+#popup_content {
+	/*background: 68px 60px no-repeat url(images/info.gif);*/
+}
+
+#popup_content.alert {
+	/*background-image: url(images/important.png);*/
+}
+
+#popup_content.tip {
+	/*background-image: url(images/important.png);*/
+}
+
+#popup_content.confirm {
+	/*background: url(images/important.gif.png) 50px 65px no-repeat;*/
+}
+
+#popup_content.prompt {
+	background-image: url(images/help.png);
+}
+
+#popup_message {
+	padding: 50px 0px 0px 0px;
+}
+
+#popup_messageText {
+	padding-top: 25px;
+	min-height: 80px;
+	max-height: 120px;
+	overflow-x: hidden;
+	overflow-y: auto;
+	word-wrap: break-word; 
+	word-break:break-all;
+	font-size: 20px;
+	text-align: center;
+	width:489px;
+	margin-left: 0px;
+}
+
+#popup_panel {
+	padding: 0 10px 10px 0;
+	text-align: right;
+}
+
+#popup_prompt, #popup_ok, #popup_cancel {
+	width: 70px;
+	height: 30px;
+	font-size: 14px;
+	color: #fff;
+	border: none;
+	outline: none;
+	cursor: pointer;
+	line-height: 11px;
+}
+
+#popup_prompt, #popup_ok {
+	background-color: #0868e0;
+}
+
+#popup_prompt:hover, #popup_ok:hover {
+	background-color: #0868e0;
+}
+
+#popup_cancel {
+	background-color: #f1f1f1;
+	color: #000;
+	border: solid 1px #c0c0c0;
+}
+
+#popup_cancel:hover {
+	background-color: #f4f4f4;
+	color: #0868e0;
+}
+
+#popup_prompt:focus, #popup_ok:focus, #popup_cancel:focus {
+	margin-left: 10px;
+	outline: none;
+	border: none;
+}

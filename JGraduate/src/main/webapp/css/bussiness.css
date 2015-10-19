@@ -1,0 +1,123 @@
+.g-hd{
+    width: 100%;
+    height: 600px;
+    background: #1cbcd6;
+}
+.m-header{
+    height: 600px;
+    background-image: url("../image/banner.png");
+    background-repeat: no-repeat;
+    position: relative;
+}
+.m-header .logo{
+    margin-top: 30px;
+}
+.search-input-div{
+    position: absolute;
+    bottom: 50px;
+}
+.m-div-frame{
+    width: auto;
+    text-align:center;
+    display: inline;
+    height: 20px;
+    margin: 0 auto;
+
+}
+.line{
+    width: 330px;
+    height: 1px;
+    background: #5c5c5c;
+    display: inline-block;
+    vertical-align: super;
+
+}
+.first-name{
+    border-width: 0px 1px;
+    border-color: #5c5c5c;
+    border-style: solid;
+    padding: 0px 15px;
+}
+.m-first{
+    height: 480px;
+}
+.data-pic{
+    margin-top: 50px;
+    width: 70%;
+    float: left;
+
+}
+.data-pic-img{
+    background: url("/image/person.png") 100px 30px no-repeat;
+}
+.data-map{
+    width: 100%;
+    height: 350px;
+    /*border: 1px solid;*/
+    margin-left: 240px;
+}
+.data-maps{
+    width: 960px;
+    height: 600px;
+}
+.data-list{
+    width: 208px;
+    height: 398px;
+    padding: 20px;
+    margin-top: 20px;
+    border: 1px solid #dee1e3;
+}
+.company-logo{
+    width: 40px;
+    height: 40px;
+    background: #dee1e3;
+    margin-right: 10px;
+}
+.dataList-li{
+    border-bottom: 1px dashed #bdbdbd;
+    padding: 15px 0px;
+
+}
+.list-right{
+    width: 75%;
+}
+.data-list h1{
+    border-bottom: 1px dashed #bdbdbd;
+    padding-bottom: 10px;
+}
+
+.g-ft{
+    width: 100%;
+    height:60px;
+}
+.m-footer{
+    width: 960px;
+    margin: 0 auto;
+    height: 60px;
+    text-align: left;
+}
+.m-footer-up{
+    margin-top: 12px;
+    position: absolute;
+}
+.m-footer-up li{
+    color: #fff;
+    float: left;
+    display: inline-block;
+    padding: 0px 4px;
+    height: 15px;
+    line-height: 15px;
+}
+.m-footer-up li a{
+    color: #999;
+}
+.m-footer .ft-nav-left{
+    float: left;
+    margin-top: 12px;
+}
+.m-footer .ft-nav{
+    float: right;
+    color: #999;
+    margin-top: 21px;
+}
+

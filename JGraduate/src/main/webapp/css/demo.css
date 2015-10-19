@@ -1,0 +1,263 @@
+/*文档*/
+.g-doc{
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+
+}
+/*头部*/
+.g-hd{
+    width: 100%;
+    background: #fff;
+    height: 110px;
+    background-size: cover;
+    border-bottom: 1px solid #dee1e3;
+}
+.g-hd .m-header{
+    width: 960px;
+    margin: 0 auto;
+ /*   padding-top: 16px;  no*/
+
+}
+.g-hd-up{
+    width: 100%;
+    background: #eef2f2;
+    height: 30px;
+    line-height: 30px;
+}
+.g-hd-down{
+    width: 100%;
+}
+
+.m-header .logo{
+    float: left;
+    /*    width: 90px;
+        height: 40px;*/
+    margin-right: 90px;
+    cursor:pointer;
+}
+
+.m-header-right{
+    float: right;
+    position: relative;
+}
+
+/*主体*/
+.g-bd{
+    width: 960px;
+    height: 100%;
+    margin: 0 auto;
+}
+.g-content{
+    width: 960px;
+    height: 100%;
+    min-height: 500px;
+    margin-top:20px;
+    margin-bottom: 50px;
+}
+/*左边*/
+.g-left{
+    float: left;
+    width: 160px;
+    height:auto!important;
+    min-height: 380px;
+}
+/*右边*/
+.g-right{
+    float: right;
+    height: auto!important;
+    min-height: 500px;
+
+    /*  padding: 20px;*/
+}
+.g-right-width{
+    width: 790px;
+}
+/*输入框*/
+.input{
+    border: 0px;
+    text-align: left;
+    text-indent: 10px;
+    color: #5c5c5c;
+    padding: 12px 0px;
+    width: 240px;
+    outline: none;
+    font-size: 14px;
+}
+/*字体*/
+/*16 号*/
+.u-tt-lg{
+    font-size: 16px;
+}
+/*14 号*/
+.u-tt-md{
+    font-size: 14px;
+}
+/*12 号*/
+.u-tt-sm{
+    font-size: 12px;
+}
+/*字体的颜色*/
+.u-tt-color1{
+    color: #333;
+}
+.u-tt-color2{
+    color: #555;
+}
+.u-tt-color3{
+    color: #777;
+}
+.u-tt-color4{
+    color: #999;
+}
+/*主要色彩颜色*/
+.u-tt-color5{
+    color: #077bea;;
+}
+.u-tt-color6{
+    color: #90b297;
+}
+/*和主要颜色相近*/
+.u-tt-color7{
+    color: #34bd63;
+}
+.u-tt-color8{
+    color: #fff;
+}
+.u-tt-color9{
+    color: #5c5c5c;
+}
+/*按钮*/
+/*橙色按钮*/
+.u-tt-btn1{
+    display: inline-block;
+    width: 170px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    font-size: 14px;
+    color: #fff;
+    background-color: #d7d50e;
+    border: 0px;
+}
+/*绿色按钮*/
+.u-tt-btn2{
+    display: inline-block;
+    padding: 7px 20px;
+    font-size: 14px;
+    color: #fff;
+    background-color: #077bea;
+    border: 0px;
+    border-radius: 7px;
+}
+/*绿边按钮*/
+.u-tt-btn3{
+    display: inline-block;
+    padding: 0px 15px;
+    font-size: 14px;
+    color: #1fc4db;
+    background-color: #fff;
+    border: 1px solid #1fc4db;
+}
+/*文字 链接按钮*/
+.u-tt-btn4{
+    display: inline-block;
+    font-size: 12px;
+    text-decoration: underline;
+}
+/*标签*/
+.u-tag1{
+    font-size: 12px;
+    padding: 3px 6px 3px 6px;
+    border: 1px solid #90b297;
+    display: inline-block;
+    position: relative;
+    border-left: 0px;
+    border-radius: 0px 15px 15px 0px;
+    background: #fff;
+    float: left;
+    line-height: 14px;
+
+}
+.u-tag-before{
+    width: 0;
+    height: 0;
+    border-top: 11px solid transparent;
+    border-right: 10px solid #90b297;
+    border-bottom: 11px solid transparent;
+    position: absolute;
+    left: -10px;
+    top: -1px;
+}
+.u-tag-after{
+    width: 0;
+    height: 0;
+    border-top: 10px solid transparent;
+    border-right: 9px solid #fff;
+    border-bottom: 10px solid transparent;
+    position: absolute;
+    left: -9px;
+    top: 0px;
+}
+.u-tag2{
+    background: #f1f2f2;
+    font-size: 12px;
+    color: #333;
+    display: inline-block;
+    padding: 6px 10px;
+    border-radius: 15px;
+
+}
+/*图标*/
+.icon{
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background-image:url("/images/icon.png");
+    background-repeat: no-repeat;
+    vertical-align: middle;
+}
+
+/*超出文字处理*/
+.u-tt-more {
+    width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.text-algin{
+    text-align: center;
+}
+.text-alginRight{
+    text-align: right;
+}
+.u-tt-bold {
+    font-weight: bold;
+}
+/*行级*/
+.display-inline{
+    display: inline;
+}
+/* 右浮动*/
+.float-right{
+    float: right;
+}
+/* 左浮动*/
+.float-left{
+    float: left;
+}
+.line-height{
+    line-height: 25px;
+}
+.big-line-height{
+    line-height:40px;
+}
+
+.min-line-height{
+    line-height: 17px;
+}
+.margin-right{
+    margin-right: 20px;
+}
+
+
