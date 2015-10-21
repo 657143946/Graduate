@@ -151,44 +151,49 @@ var jG_charts = {
                 $.each(route,function(indexArr,arr){
                     //var arr = valArr.split('@');
 
-                    categories.push({name : indexArr});
+                    if(indexArr < 5){
+                        categories.push({name : indexArr});
 
-                    $.each(arr,function(index,value){
+                        $.each(arr,function(index,value){
 
-                        if(index == 0){
-                            value = param.expJob;
-                            route[indexArr][index] = param.expJob;
-                        }
-
-                        //var value = val.replace(/[#]\S+/,'');
-                        var flag = false;
-
-                        if(indexArr == 0 && index == 0){
-                            if(nodes.length == 0){
-                                nodes.push({category:0, name: value, value : 5,itemStyle: {
-                                    normal: {
-                                        color : '#ffffff',
-                                        borderColor : 'rgba(30,144,255,0.8)'
-                                    }
-                                }});
+                            if(index == 0){
+                                value = param.expJob;
+                                route[indexArr][index] = param.expJob;
                             }
-                        }
-                        else{
-                            $.each(nodes,function(){
-                                if(value == this){
-                                    flag = true;
-                                    return false;
+
+                            //var value = val.replace(/[#]\S+/,'');
+                            var flag = false;
+
+                            if(indexArr == 0 && index == 0){
+                                if(nodes.length == 0){
+                                    nodes.push({category:0, name: value, value : 5,itemStyle: {
+                                        normal: {
+                                            color : '#ffffff',
+                                            borderColor : 'rgba(30,144,255,0.8)'
+                                        }
+                                    }});
                                 }
-                            });
-                            if(!flag){
-                                nodes.push({category:indexArr, name: value, value : 3});
                             }
-                        }
+                            else{
+                                if(index < 4){
+                                    $.each(nodes,function(){
+                                        if(value == this){
+                                            flag = true;
+                                            return false;
+                                        }
+                                    });
+                                    if(!flag){
+                                        nodes.push({category:indexArr, name: value, value : 3});
+                                    }
+                                }
+                            }
 
-                        if(index != 0){
-                            links.push({source : arr[index-1], target : value, weight : 1})
-                        }
-                    });
+                            if(index != 0 && index < 4){
+                                links.push({source : arr[index-1], target : value, weight : 1})
+                            }
+                        });
+                    }
+
                 });
 
                 var forceChart = ec.init(document.getElementById('forceCharts'));
